@@ -61,7 +61,7 @@ export default function Card(props: Props) {
 
 	return (
 		<div
-			className={`cursor-pointer bg-gradient-to-b from-zinc-800  to-zinc-900 md:min-h-[18rem] rounded-xl px-3 pb-5 shadow-xl relative overflow-hidden flex flex-col items-center group mx-auto border-2 border-transparent duration-200 ${colors.hoverBorder}`}
+			className={`cursor-pointer bg-gradient-to-b from-zinc-800  to-zinc-900 md:min-h-[18rem] rounded-xl px-3 pb-5 shadow-xl relative overflow-hidden flex flex-col items-center group mx-auto border-2 min-w-[17rem] md:min-w-min border-transparent duration-200 ${colors.hoverBorder}`}
 		>
 			<img
 				src={query.data?.sprites.front_default}
@@ -105,6 +105,12 @@ export default function Card(props: Props) {
 			<div
 				className={`h-[7rem] w-[13rem]  -bottom-20 left-1/2 -translate-x-1/2 absolute blur-3xl group-hover:h-[20rem] duration-200 ${colors.bgBlur}`}
 			></div>
+
+			<img
+				src="/images/pokeball.svg"
+				alt="Pokeball"
+				className="absolute rotate-45 opacity-20 -left-32"
+			/>
 		</div>
 	)
 }

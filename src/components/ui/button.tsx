@@ -11,7 +11,7 @@ export default function Button({
 }: Props) {
 	return (
 		<button
-			className={`bg-yellow-400 rounded-md py-2 px-5 font-semibold hover:bg-yellow-400/70 duration-200 flex gap-2 hover:gap-3 border-2 border-yellow-400 ${
+			className={`bg-transparent rounded-md py-2 px-5 font-semibold hover:bg-yellow-400/70 duration-200 flex gap-2 hover:gap-3 border-2 border-yellow-400 ${
 				size === "icon" ? "px-3" : "px-5"
 			}
     ${

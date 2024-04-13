@@ -1,4 +1,12 @@
-import { IconBug, IconFlame, IconPlant2, IconRipple } from "@tabler/icons-react"
+import {
+	IconBolt,
+	IconBug,
+	IconEggCracked,
+	IconFlame,
+	IconFlask2,
+	IconPlant2,
+	IconRipple,
+} from "@tabler/icons-react"
 import { useQuery } from "@tanstack/react-query"
 
 interface Props {
@@ -20,6 +28,14 @@ export default function Card(props: Props) {
 				? "bg-blue-400"
 				: query.data?.types[0].type.name === "bug"
 				? "bg-yellow-600"
+				: query.data?.types[0].type.name === "normal"
+				? "bg-zinc-700"
+				: query.data?.types[0].type.name === "poison"
+				? "bg-purple-700"
+				: query.data?.types[0].type.name === "ground"
+				? "bg-amber-700"
+				: query.data?.types[0].type.name === "bug"
+				? "bg-cyan-700"
 				: "bg-green-700",
 
 		border:
@@ -27,8 +43,16 @@ export default function Card(props: Props) {
 				? "border-red-400"
 				: query.data?.types[0].type.name === "water"
 				? "border-blue-400"
-				: query.data?.types[0].type.name === "bug"
+				: query.data?.types[0].type.name === "electric"
 				? "border-yellow-600"
+				: query.data?.types[0].type.name === "normal"
+				? "border-zinc-700"
+				: query.data?.types[0].type.name === "poison"
+				? "border-purple-700"
+				: query.data?.types[0].type.name === "ground"
+				? "border-amber-700"
+				: query.data?.types[0].type.name === "bug"
+				? "border-cyan-700"
 				: "border-green-700",
 
 		hoverBorder:
@@ -36,8 +60,16 @@ export default function Card(props: Props) {
 				? "hover:border-red-400"
 				: query.data?.types[0].type.name === "water"
 				? "hover:border-blue-400"
-				: query.data?.types[0].type.name === "bug"
+				: query.data?.types[0].type.name === "electric"
 				? "hover:border-yellow-600"
+				: query.data?.types[0].type.name === "normal"
+				? "hover:border-zinc-700"
+				: query.data?.types[0].type.name === "poison"
+				? "hover:border-purple-700"
+				: query.data?.types[0].type.name === "ground"
+				? "hover:border-amber-700"
+				: query.data?.types[0].type.name === "bug"
+				? "hover:border-cyan-700"
 				: "hover:border-green-700",
 
 		bgBlur:
@@ -45,8 +77,16 @@ export default function Card(props: Props) {
 				? "bg-red-700/50"
 				: query.data?.types[0].type.name === "water"
 				? "bg-blue-700/50"
-				: query.data?.types[0].type.name === "bug"
+				: query.data?.types[0].type.name === "electric"
 				? "bg-yellow-700/50"
+				: query.data?.types[0].type.name === "normal"
+				? "bg-zinc-700/50"
+				: query.data?.types[0].type.name === "poison"
+				? "bg-purple-700/50"
+				: query.data?.types[0].type.name === "ground"
+				? "bg-amber-700/50"
+				: query.data?.types[0].type.name === "bug"
+				? "bg-cyan-700/50"
 				: "bg-green-700/50",
 	}
 
@@ -80,6 +120,15 @@ export default function Card(props: Props) {
 				)}
 				{query.data?.types[0].type.name === "grass" && (
 					<IconPlant2 className="w-5 h-5" />
+				)}
+				{query.data?.types[0].type.name === "electric" && (
+					<IconBolt className="w-5 h-5" />
+				)}
+				{query.data?.types[0].type.name === "ground" && (
+					<IconEggCracked className="w-5 h-5" />
+				)}
+				{query.data?.types[0].type.name === "poison" && (
+					<IconFlask2 className="w-5 h-5" />
 				)}
 				{query.data?.types[0].type.name}
 			</p>

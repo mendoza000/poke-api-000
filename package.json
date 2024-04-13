@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/chivo": "^5.0.13",
+    "@tabler/icons-react": "^3.2.0",
     "@tanstack/react-query": "^5.29.2",
     "@tanstack/react-query-devtools": "^5.29.2",
     "localforage": "^1.10.0",

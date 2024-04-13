@@ -35,9 +35,9 @@ export default function Header() {
 				draggable={false}
 				className="w-[15rem] absolute -bottom-32 left-1/2 transform  -translate-x-1/2 opacity-20 rotate-90"
 			/>
-			<div className="lg:mx-32 px-5 md:mx-10 mx-0 grid grid-cols-1 md:grid-cols-2 gap-3 min-h-screen">
-				<div className="justify-center flex flex-col min-h-full gap-5">
-					<span className="text-white/70 font-semibold">
+			<div className="grid min-h-screen grid-cols-1 gap-3 px-5 mx-0 lg:mx-32 md:mx-10 md:grid-cols-2">
+				<div className="flex flex-col justify-center min-h-full gap-5">
+					<span className="font-semibold text-white/70">
 						Become a Pokémon Master
 					</span>
 
@@ -46,22 +46,24 @@ export default function Header() {
 						Pokémon Trainers, Battles, and Legendary Creatures
 					</p>
 
-					<div className="flex gap-3">
+					<div className="z-20 flex flex-col gap-3 md:flex-row">
 						<Button>
-							<IconChevronsRight className="h-6 w-6" />
+							<IconChevronsRight className="w-6 h-6" />
 							Explore now
 						</Button>
 
-						<Button variant="outline" size="icon">
-							<IconBrandGithub className="h-6 w-6" />
-						</Button>
-						<Button variant="outline" size="icon">
-							<IconBrandLinkedin className="h-6 w-6" />
-						</Button>
+						<div className="flex gap-5">
+							<Button variant="outline" size="icon">
+								<IconBrandGithub className="w-6 h-6" />
+							</Button>
+							<Button variant="outline" size="icon">
+								<IconBrandLinkedin className="w-6 h-6" />
+							</Button>
+						</div>
 					</div>
 				</div>
 
-				<div className="flex flex-col min-h-full justify-center relative">
+				<div className="relative flex flex-col justify-center min-h-full">
 					<img
 						src="/images/gengar.png"
 						alt="Gengar"

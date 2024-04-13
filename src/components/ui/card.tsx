@@ -40,15 +40,6 @@ export default function Card(props: Props) {
 				? "hover:border-yellow-600"
 				: "hover:border-green-700",
 
-		bgType:
-			query.data?.types[0].type.name === "fire"
-				? "border-red-400"
-				: query.data?.types[0].type.name === "water"
-				? "border-blue-400"
-				: query.data?.types[0].type.name === "bug"
-				? "border-yellow-600"
-				: "border-green-700",
-
 		bgBlur:
 			query.data?.types[0].type.name === "fire"
 				? "bg-red-700/50"
@@ -75,8 +66,8 @@ export default function Card(props: Props) {
 
 			<p
 				className={`
-          px-3 py-1 rounded-lg z-20 mt-2 capitalize min-w-[6rem]  text-center font-semibold flex items-center justify-center gap-1 text-white
-        ${colors.bg}`}
+          px-3 py-1 rounded-lg z-20 mt-2 capitalize min-w-[6rem]  text-center font-semibold flex items-center justify-center gap-1 text-white border-2 bg-transparent
+        ${colors.border}`}
 			>
 				{query.data?.types[0].type.name === "fire" && (
 					<IconFlame className="w-5 h-5" />
@@ -97,7 +88,7 @@ export default function Card(props: Props) {
 				<p className={`border-b-2 ${colors.border}`}>
 					{query.data?.height / 10}mts
 				</p>
-				<p className={`border-b-2 ${colors.bgType}`}>
+				<p className={`border-b-2 ${colors.border}`}>
 					{query.data?.weight / 10}kgs
 				</p>
 			</div>

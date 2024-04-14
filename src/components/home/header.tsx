@@ -7,7 +7,7 @@ import {
 
 export default function Header() {
 	return (
-		<div className="min-h-screen bg-gradient-to-b from-purple-700 to-purple-900 relative flex  justify-center rounded-b-[10rem] pt-44 md:pt-10 lg:pt-0 overflow-hidden">
+		<div className="min-h-screen bg-gradient-to-b from-purple-700 to-purple-900 relative flex  justify-center rounded-b-[5rem] md:rounded-b-[10rem] pt-44 md:pt-10 lg:pt-0 overflow-hidden">
 			<img
 				src="/images/pokemon-white.svg"
 				alt="Pokemon-logo"

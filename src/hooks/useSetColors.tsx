@@ -74,6 +74,23 @@ export default function useSetColors({ query }: Props) {
 				: query.data?.types[0].type.name === "bug"
 				? "bg-cyan-700/50"
 				: "bg-green-700/50",
+
+		iconColor:
+			query.data?.types[0].type.name === "fire"
+				? "text-red-400"
+				: query.data?.types[0].type.name === "water"
+				? "text-blue-400"
+				: query.data?.types[0].type.name === "electric"
+				? "text-yellow-600"
+				: query.data?.types[0].type.name === "normal"
+				? "text-zinc-700"
+				: query.data?.types[0].type.name === "poison"
+				? "text-purple-700"
+				: query.data?.types[0].type.name === "ground"
+				? "text-amber-700"
+				: query.data?.types[0].type.name === "bug"
+				? "text-cyan-700"
+				: "text-green-700",
 	}
 
 	return { colors }

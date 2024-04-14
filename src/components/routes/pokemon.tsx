@@ -1,6 +1,7 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import useSetColors from "../../hooks/useSetColors"
 import {
+	IconArrowBack,
 	IconBolt,
 	IconBrandSpeedtest,
 	IconBug,
@@ -15,6 +16,7 @@ import {
 	IconSword,
 } from "@tabler/icons-react"
 import useGetPokemon from "../../hooks/useGetPokemon"
+import Button from "../ui/button"
 
 export default function Header() {
 	const { pokeName = "charizard" } = useParams()
@@ -26,7 +28,7 @@ export default function Header() {
 	const { colors } = useSetColors({ query })
 
 	return (
-		<div className="min-h-screen bg-gradient-to-b from-zinc-700 to-zinc-900 relative flex  justify-center rounded-b-[10rem] pt-44 md:pt-10 lg:pt-0 overflow-hidden">
+		<div className="min-h-screen bg-gradient-to-b from-zinc-700 to-zinc-900 relative flex  justify-center rounded-b-[5rem] md:rounded-b-[10rem] pt-44 md:pt-10 lg:pt-0 overflow-hidden pb-20 md:pb-0">
 			<img
 				src="/images/pokemon-white.svg"
 				alt="Pokemon-logo"
@@ -56,32 +58,9 @@ export default function Header() {
 			/>
 			<div className="grid min-h-screen grid-cols-1 gap-3 px-5 mx-0 lg:mx-32 md:mx-10 md:grid-cols-2">
 				<div className="flex flex-col justify-center min-h-full gap-5">
-					<span className="font-semibold uppercase text-white/70">
+					<span className="text-3xl font-semibold uppercase text-white/70">
 						{pokeName}
 					</span>
-
-					<div className="flex flex-col gap-2">
-						<p className="flex items-center gap-1 font-bold text-white">
-							<IconHeart className="w-6 h-6" />
-							HP: {query.data?.stats[0].base_stat}
-						</p>
-						<p className="flex items-center gap-1 font-bold text-white">
-							<IconSword className="w-6 h-6" />
-							Attack: {query.data?.stats[1].base_stat}
-						</p>
-						<p className="flex items-center gap-1 font-bold text-white">
-							<IconShield className="w-6 h-6" />
-							Defense: {query.data?.stats[2].base_stat}
-						</p>
-						<p className="flex items-center gap-1 font-bold text-white">
-							<IconBrandSpeedtest className="w-6 h-6" />
-							Speed: {query.data?.stats[5].base_stat}
-						</p>
-						<p className="flex items-center gap-1 font-bold text-white">
-							<IconChartArrowsVertical className="w-6 h-6" />
-							Base Experience: {query.data?.base_experience}
-						</p>
-					</div>
 
 					<div className="flex">
 						<p
@@ -113,6 +92,38 @@ export default function Header() {
 							{query.data?.types[0].type.name}
 						</p>
 					</div>
+
+					<div className="flex flex-col gap-2">
+						<p className="flex items-center gap-1 font-bold text-white">
+							<IconHeart className={`w-6 h-6 ${colors.iconColor}`} />
+							HP: {query.data?.stats[0].base_stat}
+						</p>
+						<p className="flex items-center gap-1 font-bold text-white">
+							<IconSword className={`w-6 h-6 ${colors.iconColor}`} />
+							Attack: {query.data?.stats[1].base_stat}
+						</p>
+						<p className="flex items-center gap-1 font-bold text-white">
+							<IconShield className={`w-6 h-6 ${colors.iconColor}`} />
+							Defense: {query.data?.stats[2].base_stat}
+						</p>
+						<p className="flex items-center gap-1 font-bold text-white">
+							<IconBrandSpeedtest className={`w-6 h-6 ${colors.iconColor}`} />
+							Speed: {query.data?.stats[5].base_stat}
+						</p>
+						<p className="flex items-center gap-1 font-bold text-white">
+							<IconChartArrowsVertical
+								className={`w-6 h-6 ${colors.iconColor}`}
+							/>
+							Base Experience: {query.data?.base_experience}
+						</p>
+					</div>
+
+					<Link to={"/"}>
+						<Button>
+							<IconArrowBack className="w-6 h-6" />
+							Back to home
+						</Button>
+					</Link>
 				</div>
 
 				<div className="relative flex flex-col justify-center min-h-full">
@@ -120,7 +131,7 @@ export default function Header() {
 						src={query.data?.sprites.other["official-artwork"].front_default}
 						alt={pokeName}
 						draggable={false}
-						className="ml-auto w-[30rem] z-20 absolute right-0 blur-2xl"
+						className="ml-auto w-[30rem] z-20 absolute right-0 blur-2xl opacity-50"
 					/>
 					<img
 						src={query.data?.sprites.other["official-artwork"].front_default}
@@ -128,6 +139,13 @@ export default function Header() {
 						draggable={false}
 						className="ml-auto w-[30rem] z-20"
 					/>
+
+					<div
+						className={`border-t-2 flex items-center justify-between text-white uppercase text-xl pt-2 ${colors.border}`}
+					>
+						<span>{query.data?.height / 10}mts</span>
+						<span>{query.data?.weight / 10}kgs</span>
+					</div>
 				</div>
 			</div>
 		</div>

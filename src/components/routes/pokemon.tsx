@@ -28,7 +28,7 @@ export default function Header() {
 	const { colors } = useSetColors({ query })
 
 	return (
-		<div className="min-h-screen bg-gradient-to-b from-zinc-700 to-zinc-900 relative flex  justify-center rounded-b-[5rem] md:rounded-b-[10rem] pt-44 md:pt-10 lg:pt-0 overflow-hidden pb-20 md:pb-0">
+		<div className="min-h-screen bg-gradient-to-b from-zinc-700 to-zinc-900 relative flex  justify-center rounded-b-[5rem] md:rounded-b-[10rem] pt-44 md:pt-10 lg:pt-0 overflow-hidden pb-20 md:pb-0 animate-fade">
 			<img
 				src="/images/pokemon-white.svg"
 				alt="Pokemon-logo"

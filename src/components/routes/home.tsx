@@ -3,7 +3,7 @@ import PokemonList from "../home/pokemon-list"
 
 export default function Home() {
 	return (
-		<div>
+		<div className="animate-fade">
 			<Header />
 			<PokemonList />
 		</div>

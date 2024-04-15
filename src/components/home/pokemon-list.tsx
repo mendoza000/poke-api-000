@@ -12,7 +12,7 @@ export default function PokemonList() {
 	})
 
 	return (
-		<div className="px-5 mx-0 py-36 lg:mx-32 md:mx-10">
+		<div className="px-5 py-20 mx-0 lg:mx-32 md:mx-10" id="pokemons">
 			{query.isLoading && <p>Loading...</p>}
 			{query.isError && <p>Error</p>}
 

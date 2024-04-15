@@ -10,6 +10,7 @@ import {
 import { Link } from "react-router-dom"
 import useGetPokemon from "../../hooks/useGetPokemon"
 import useSetColors from "../../hooks/useSetColors"
+import { usePokemonsStore } from "../../store/pokemons"
 
 interface Props {
 	name: string
@@ -19,11 +20,19 @@ interface Props {
 export default function Card(props: Props) {
 	const { query } = useGetPokemon(props)
 	const { colors } = useSetColors({ query })
+	const { lastPokemonSelected, setLastPokemonSelected } = usePokemonsStore(
+		(state) => state
+	)
 
 	return (
-		<Link to={"/pokemon/" + props.name}>
+		<Link
+			to={"/pokemon/" + props.name}
+			onClick={() => setLastPokemonSelected(props.name)}
+		>
 			<div
-				className={`cursor-pointer bg-gradient-to-b from-zinc-800  to-zinc-900 md:min-h-[18rem] rounded-xl px-3 pb-5 shadow-xl relative overflow-hidden flex flex-col items-center group mx-auto border-2 min-w-[17rem] md:min-w-min border-transparent duration-200 ${colors.hoverBorder}`}
+				className={`cursor-pointer bg-gradient-to-b from-zinc-800  to-zinc-900 md:min-h-[18rem] rounded-xl px-3 pb-5 shadow-xl relative overflow-hidden flex flex-col items-center group mx-auto border-2 min-w-[17rem] md:min-w-min border-transparent duration-200 ${
+					colors.hoverBorder
+				} ${lastPokemonSelected === props.name ? "opacity-30" : ""}`}
 			>
 				<img
 					src={query.data?.sprites.other["official-artwork"].front_default}

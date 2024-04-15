@@ -47,18 +47,27 @@ export default function Header() {
 					</p>
 
 					<div className="z-20 flex flex-col gap-3 md:flex-row">
-						<Button>
-							<IconChevronsRight className="w-6 h-6" />
-							Explore now
-						</Button>
+						<a href="#pokemons">
+							<Button>
+								<IconChevronsRight className="w-6 h-6" />
+								Explore now
+							</Button>
+						</a>
 
 						<div className="flex gap-5">
-							<Button variant="outline" size="icon">
-								<IconBrandGithub className="w-6 h-6" />
-							</Button>
-							<Button variant="outline" size="icon">
-								<IconBrandLinkedin className="w-6 h-6" />
-							</Button>
+							<a
+								href="https://github.com/mendoza000/poke-api-000"
+								target="_blank"
+							>
+								<Button variant="outline" size="icon">
+									<IconBrandGithub className="w-6 h-6" />
+								</Button>
+							</a>
+							<a href="https://linkdin/in/mendoza000" target="_blank">
+								<Button variant="outline" size="icon">
+									<IconBrandLinkedin className="w-6 h-6" />
+								</Button>
+							</a>
 						</div>
 					</div>
 				</div>

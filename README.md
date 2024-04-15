@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
+# 🐸Poke API Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application that utilizes the Poke API to display information about the first 15 Pokémon. Users can click on each Pokémon card to view detailed information about them.
 
-Currently, two official plugins are available:
+## ⚡Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- React Router DOM
+- Tailwind CSS
+- Zustand (for state management)
+- React Query and React Query Devtools
+- Fontsource for Chivo font
+- Tabler Icons React
 
-## Expanding the ESLint configuration
+## 🚀Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To get started with this project, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Run `pnpm install` to install the dependencies.
+4. Run `pnpm dev` to start the development server.
+5. Open your browser and visit `http://localhost:5173` to view the application.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## 📔Available Scripts
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- `pnpm dev`: Starts the development server.
+- `pnpm build`: Builds the production-ready code.
+- `pnpm lint`: Runs ESLint to lint the codebase.
+- `pnpm preview`: Previews the production build locally.
+
+## 💻Project Structure
+
+- `src/`: Contains the source code of the application.
+  - `components/`: Contains React components.
+    - `home/`: Contains components and logic specific to the home page.
+    - `routes/`: Contains components and logic specific to the home page.
+  - `hooks/`: Contains custom hooks for state management.
+  - `store/`: Contains the global state management logic using Zustand.
+- `public/`: Contains static assets.
+
+## ✨Contributing
+
+Contributions are welcome! If you have any suggestions, bug fixes, or improvements, feel free to open an issue or create a pull request.
+
+## 📖License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
